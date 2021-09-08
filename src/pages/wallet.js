@@ -1,30 +1,24 @@
 import React, { useState } from "react";
-import Button from 'react-bootstrap/Button';
-import Collapse from 'react-bootstrap/Collapse';
 
 const Wallet = () => {
-    const [open, setOpen] = useState(false);
+
     return (
-        <div className="container">
-            <h2>{"Bienvenido ".concat(localStorage.getItem("name"))}</h2>
-            <p>Tu saldo actual es de: 90€</p>
+        <div className="container my-3">
+            <h2 className="primary-color">{"Bienvenido ".concat(localStorage.getItem("name"))}</h2>
+            <p className="h5 my-3">Tu saldo actual es de: <span className="primary-color">120 $</span></p>
+            <p className="h5 my-3">Número de cuenta: <span className="primary-color">8888-8888</span></p>
             <div>
-                <Button
-                    onClick={() => setOpen(!open)}
-                    aria-controls="example-collapse-text"
-                    aria-expanded={open}
-                >
-                    Nueva transferencia
-                </Button>
-                <Collapse in={open}>
-                    <div id="example-collapse-text" className="div-transfer">
-                        <h2>Realizar nueva transferencia:</h2>
-                        <label htmlFor="amount" class="form-label">Cantidad:</label>
-                        <input type="number" name="amount" class="form-control" id="amount" />
-                        <label htmlFor="identity" class="form-label">Número de cuenta</label>
-                        <input type="text" name="identity" class="form-control" id="amount" />
+                <h3 className="mt-5 primary-color">Últimos movimientos</h3>
+                <div className="div-wallet-history row">
+                    <div className="col-8">
+                    <p><span className="primary-color">Emisor: </span>Juan Jose, 8888-8888</p>
+                    <p><span className="primary-color">Remitente: </span>Alberto Martinez, 9999-9999</p>
                     </div>
-                </Collapse>
+                    <div className="col-4">
+                        <p className="h2 text-success">+90 $</p>
+                        <p>Saldo: 1680 $</p>
+                    </div>
+                </div>
             </div >
         </div>
     );
