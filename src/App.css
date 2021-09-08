@@ -1,18 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
+
+/* GENERAL STYLES */
 body{
+  font-family: 'Nova Square', cursive;
   color: white;
 }
 .primary-color{
   color: #14b471;
 }
-.main-div {
+.div-app{
   height: 100vh;
   background-color: #212529;
   color: white;
+  font-family: 'Nova Square', cursive;
 }
+.button-green{
+  border-radius: 0.25rem;
+  border: 0.1rem;
+  background-color: #14b471;
+  color: white;
+  font-weight: 500;
+  font-size:1.2rem;
+  padding: 0.5rem 1rem;
+  margin: 1rem;
+}
+
+/* NAVBAR STYLES */
 .my-navbar{
   border-bottom:  0.15rem;
   border-bottom-style: solid;
   border-color: #14b471;
 }
 
+/* LOGIN STYLES */
+.div-login{
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  width: 65%;
+  height: 25rem;
+  margin: 3rem auto;
+  padding: 2rem;
+}
+.div-login-form{
+  width: 70%;
+  margin: auto;
+}
 
