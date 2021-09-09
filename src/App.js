@@ -10,10 +10,8 @@ import AddMoney from "./pages/add-money";
 import Login from "./pages/login";
 import Register from "./pages/register";
 
-function App(props) {
-	const data = useSelector((state)=>{
-		console.log(state)
-	});
+function App() {
+	
 	return (
 		<div className="div-app">
 			<BrowserRouter>

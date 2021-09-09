@@ -1,10 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom"
 import { useForm } from "react-hook-form";
+import { useSelector, useDispatch } from "react-redux";
+import { signUpUserAction } from "../redux/actions";
 
 const Register = () => {
+    const users = useSelector(state => state.users );
+    const dispatch = useDispatch();
+
     const { register, handleSubmit } = useForm();
-    const onSubmit = (data) => alert(JSON.stringify(data));
+    const onSubmit = (data) => {
+        alert(JSON.stringify(data));
+        dispatch(signUpUserAction(data))
+    };
 
     return (
         <div className="container">
@@ -24,6 +32,9 @@ const Register = () => {
                         </div>
                     </div>
                 </form>
+                {users.map(user =>{
+                    return (<span>{user.email}</span>);
+                })}
             </div>
         </div>
     );
