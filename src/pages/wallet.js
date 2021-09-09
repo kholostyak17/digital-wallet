@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 
 const Wallet = () => {
 
     return (
         <div className="container my-3">
             <h2 className="primary-color">{"Bienvenido ".concat(localStorage.getItem("name"))}</h2>
-            <p className="h5 my-3">Tu saldo actual es de: <span className="primary-color">120 $</span></p>
+            <p className="h5 my-3">Tu saldo actual es de: <span className="primary-color h3">120 $</span></p>
             <p className="h5 my-3">Número de cuenta: <span className="primary-color">8888-8888</span></p>
             <div>
                 <h3 className="mt-5 primary-color">Últimos movimientos</h3>
