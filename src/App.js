@@ -1,9 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
-import { useSelector } from 'react-redux';
+//import { useSelector } from 'react-redux';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import MyNavbar from "./components/my-navbar";
+import Home from "./pages/home";
 import Wallet from "./pages/wallet";
 import Transfer from "./pages/transfer";
 import AddMoney from "./pages/add-money";
@@ -17,6 +17,9 @@ function App() {
 			<BrowserRouter>
 				<MyNavbar />
 				<Switch>
+					<Route exact path="/">
+						<Home />
+					</Route>
 					<Route exact path="/wallet">
 						<Wallet />
 					</Route>
