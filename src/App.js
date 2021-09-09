@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
+import { useSelector } from 'react-redux';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+
 import MyNavbar from "./components/my-navbar";
 import Wallet from "./pages/wallet";
 import Transfer from "./pages/transfer";
@@ -8,7 +10,10 @@ import AddMoney from "./pages/add-money";
 import Login from "./pages/login";
 import Register from "./pages/register";
 
-function App() {
+function App(props) {
+	const data = useSelector((state)=>{
+		console.log(state)
+	});
 	return (
 		<div className="div-app">
 			<BrowserRouter>
