@@ -24,6 +24,9 @@ body{
   padding: 0.5rem 1rem;
   margin: 1rem;
 }
+.button-green:hover{
+  background-color: #0f8353;
+}
 
 /* NAVBAR STYLES */
 .my-navbar{
@@ -44,5 +47,25 @@ body{
 .div-login-form{
   width: 70%;
   margin: auto;
+}
+
+/* REGISTER STYLES */
+.div-register-form{
+  width: 80%;
+}
+
+/* WALLET STYLES */
+.div-wallet-history{
+  border-radius: 0.5rem;
+  border:  0.1rem;
+  border-style: solid;
+  border-color: #14b471;
+  padding: 1rem;
+}
+
+/* TRANSFER STYLES */
+.hidden-box{
+  height: 0px;
+  overflow: hidden;
 }
 
