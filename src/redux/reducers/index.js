@@ -1,4 +1,4 @@
-import { SIGNUP_USER, LOGIN_USER, ADD_MONEY, MAKE_TRANSFER, GET_NEW_DATE } from "../actions/types";
+import { SIGNUP_USER, ADD_MONEY, MAKE_TRANSFER, GET_NEW_DATE } from "../actions/types";
 
 const userReducer = (state, action) => {
     switch (action.type) {
@@ -8,13 +8,7 @@ const userReducer = (state, action) => {
                 ...state,
                 users: [...state.users, action.payload]
             };
-        case LOGIN_USER:
-            return {
-                ...state,
-                users: state.users
-            };
         case ADD_MONEY:
-            console.log(state);
             const addData = action.payload;
             let account = state.users.find(elem => elem.email === addData.email); //guardo objeto con datos de 1 usuario
             const position = state.users.indexOf(account);  //busco la posición en la que se encuentra de toda la lista
@@ -27,8 +21,6 @@ const userReducer = (state, action) => {
                 balance: parseInt(account.money) + parseInt(addData.amount),
                 date: userReducer(state, { type: GET_NEW_DATE }),   //devuelve fecha,
             };
-            console.log(newTransaction, typeof addData.amonut, typeof account.money);
-            console.log(account);
             account.money = parseInt(account.money) + parseInt(addData.amount); //incremento dinero total
             account.transactions.push(newTransaction);  //meto última transacción en la lista de transacciones
             const newStateAdd = state.users;
@@ -39,10 +31,8 @@ const userReducer = (state, action) => {
                 users: newStateAdd,
             };
         case MAKE_TRANSFER:
-            console.log(state);
             const transfData = action.payload;
             let senderAccount = state.users.find(elem => elem.email === transfData.senderEmail);
-            console.log(senderAccount);
             const senderPosition = state.users.indexOf(senderAccount);
             let receptorAccount = state.users.find(elem => elem.email === transfData.receptorEmail);
             const receptorPosition = state.users.indexOf(receptorAccount);
@@ -92,5 +82,9 @@ const userReducer = (state, action) => {
 
 export default userReducer;
 
-
 //global functions
+// const getNewID = () => {
+    //     const id = store.id;
+    //     store.id++;
+    //     return (id);
+    // };
