@@ -3,21 +3,35 @@ import { Link } from "react-router-dom"
 import { useForm } from "react-hook-form";
 import { useSelector, useDispatch } from "react-redux";
 import { signUpUserAction } from "../redux/actions";
+import { browserRouterRef } from "../App";
+import MyNavbar from "../components/my-navbar";
 
 const Register = () => {
-    const users = useSelector(state => state.users );
     const dispatch = useDispatch();
+    const users = useSelector(state => state.users);
 
     const { register, handleSubmit } = useForm();
     const onSubmit = (data) => {
-        alert(JSON.stringify(data));
-        dispatch(signUpUserAction(data))
+        if (!users.find(elem => elem.email === data.email)) {
+            data.money = 0;
+            data.transactions = [];
+            dispatch(signUpUserAction(data));
+            localStorage.setItem("name", data.name);
+            localStorage.setItem("email", data.email);
+            localStorage.setItem("signedIn", true);
+            browserRouterRef.current.history.replace("/wallet");
+        }
+        else {
+            alert("Error: Dirección de correo electrónico ya existente");
+        }
     };
 
-    return (
+    return (<>
+        <MyNavbar />
         <div className="container">
             <div className="col-12 col-md-5 m-3">
                 <h2 className="primary-color">Registro</h2>
+                {/* <button onClick={()=>dispatch(addMoneyAction("CHUJ CIPA DUPA JEBAC"))}>CHUJ</button> */}
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="div-register-form mb-3">
                         <label htmlFor="name" className="form-label mt-3">Nombre</label>
@@ -32,12 +46,12 @@ const Register = () => {
                         </div>
                     </div>
                 </form>
-                {users.map(user =>{
-                    return (<span>{user.email}</span>);
-                })}
+                {/* {users.map(user => {
+                    return (<p>{user.email}</p>);
+                })} */}
             </div>
         </div>
-    );
+    </>);
 };
 
 export default Register;
