@@ -1,8 +1,8 @@
-import './App.css';
-//import { useSelector } from 'react-redux';
+import React, { createRef } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+//import { useSelector } from 'react-redux';
+import './App.css';
 
-import MyNavbar from "./components/my-navbar";
 import Home from "./pages/home";
 import Wallet from "./pages/wallet";
 import Transfer from "./pages/transfer";
@@ -10,12 +10,12 @@ import AddMoney from "./pages/add-money";
 import Login from "./pages/login";
 import Register from "./pages/register";
 
+export const browserRouterRef = React.createRef();
+
 function App() {
-	
 	return (
 		<div className="div-app">
-			<BrowserRouter>
-				<MyNavbar />
+			<BrowserRouter ref={browserRouterRef}>
 				<Switch>
 					<Route exact path="/">
 						<Home />
