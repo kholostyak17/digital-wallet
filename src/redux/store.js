@@ -17,7 +17,7 @@ const initialState = {
                     transactions: [
                         {
                             type: "deposit",
-                            id_transaction: 0,
+                            idTransaction: 0,
                             beneficiaryEmail: "blue@email.com",
                             beneficiaryName: "blue",
                             amount: 500,
@@ -25,7 +25,7 @@ const initialState = {
                         },
                         {
                             type: "transference",
-                            id_transaction: 2,
+                            idTransaction: 2,
                             senderEmail: "blue@email.com",
                             senderName: "blue",
                             receptorEmail: "green@email.com",
@@ -44,7 +44,7 @@ const initialState = {
                     transactions: [
                         {
                             type: "deposit",
-                            id_transaction: 1,
+                            idTransaction: 1,
                             beneficiaryEmail: "green@email.com",
                             beneficiaryName: "green",
                             amount: 500,
@@ -52,7 +52,7 @@ const initialState = {
                         },
                         {
                             type: "transference",
-                            id_transaction: 2,
+                            idTransaction: 2,
                             senderEmail: "blue@email.com",
                             senderName: "blue",
                             receptorEmail: "green@email.com",
