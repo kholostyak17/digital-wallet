@@ -1,6 +1,5 @@
 import React from "react";
 import { useSelector } from "react-redux";
-//import { browserRouterRef } from "../App";
 import MyNavbar from "../components/my-navbar";
 
 const Wallet = () => {
@@ -8,7 +7,6 @@ const Wallet = () => {
     const userData = useSelector(state => state.users.find(elem => elem.email === userEmail));
     if (!userData) {
         window.location.replace("/login");
-        // browserRouterRef.current.history.replace("/login"); //TODO: **SI NO SE RENDERIZA NADA, NO HAY BROWSERROUTER
     }
 
     return (<>
