@@ -9,7 +9,7 @@ body{
   color: #14b471;
 }
 .div-app{
-  height: 100vh;
+  min-height: 100vh;
   background-color: #212529;
   color: white;
   font-family: 'Nova Square', cursive;
@@ -26,6 +26,15 @@ body{
 }
 .button-green:hover{
   background-color: #0f8353;
+}
+.App-logo {
+  color: #14b471;
+  height: 40vmin;
+}
+.App-logo-mini {
+  color: #14b471;
+  height: 1.2rem;
+  margin: 0.2rem;
 }
 
 /* NAVBAR STYLES */
@@ -61,6 +70,14 @@ body{
   border-style: solid;
   border-color: #14b471;
   padding: 1rem;
+  background-color: #1a1d20;
+}
+.div-last-transactions{
+  background-color: rgba(0, 0, 0, 0.5);
+  max-height: 54vh;
+  display: flex;
+  flex-direction: column-reverse;
+  overflow-y: auto;
 }
 
 /* TRANSFER STYLES */
