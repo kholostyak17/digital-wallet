@@ -1,21 +1,36 @@
 import React from "react";
+import { browserRouterRef } from "../App";
+import MyNavbar from "../components/my-navbar";
+import logo from "../logo.svg"
 
 const Home = () => {
 
-    return (
+    return (<>
+        <MyNavbar />
         <div className="container my-3 text-center">
             <h1 className="primary-color">DIGITAL WALLET</h1>
-            <div className="text-center">
-                AAAA
+            <div className="text-center p-5">
+                <img src={logo} className="App-logo" alt="logo" />
             </div>
-            <div>
-             <button className="button-green m-3">Regístrate</button>
-             <button className="button-green m-3">Accede</button>
-            </div>
-            <input type="time" name="" id=""  onChange={(e)=>console.log(e.target.value)}/>
-            <input type="date" name="" id=""  onChange={(e)=>console.log(e.target.value)}/>
+            {!localStorage.getItem("signedIn")
+                ?
+                (<div>
+                    <button className="button-green m-3" onClick={() => browserRouterRef.current.history.replace("/register")}>
+                        Regístrate
+                    </button>
+                    <button className="button-green m-3" onClick={() => browserRouterRef.current.history.replace("/login")}>
+                        Accede
+                    </button>
+                </div>)
+                :
+                (<div>
+                    <button className="button-green m-3" onClick={() => browserRouterRef.current.history.replace("/wallet")}>
+                        Ir a mi cartera
+                    </button>
+                </div>)
+            }
         </div>
-    );
+    </>);
 };
 
 export default Home;
