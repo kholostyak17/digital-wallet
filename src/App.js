@@ -1,6 +1,5 @@
 import React, { createRef } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-//import { useSelector } from 'react-redux';
 import './App.css';
 
 import Home from "./pages/home";

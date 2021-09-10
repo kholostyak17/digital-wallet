@@ -1,19 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom"
 import { useForm } from "react-hook-form";
-import { useSelector, useDispatch } from "react-redux";
-import { LoginUserAction } from "../redux/actions";
+import { useSelector } from "react-redux";
 import { browserRouterRef } from "../App";
 import MyNavbar from "../components/my-navbar";
 
 const Login = () => {
-    const dispatch = useDispatch();
     const users = useSelector(state => state.users);
 
     const { register, handleSubmit } = useForm();
     const onSubmit = (data) => {
         const userAccount = users.find(element => element.email === data.email);
-        console.log({users:users, formData:data, userAccount: data});
         if (userAccount && data.password === userAccount.password) {
             localStorage.setItem("name", userAccount.name);
             localStorage.setItem("email", userAccount.email);

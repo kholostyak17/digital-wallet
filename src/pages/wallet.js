@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
-import { browserRouterRef } from "../App";
+//import { browserRouterRef } from "../App";
 import MyNavbar from "../components/my-navbar";
 
 const Wallet = () => {
@@ -8,14 +8,8 @@ const Wallet = () => {
     const userData = useSelector(state => state.users.find(elem => elem.email === userEmail));
     if (!userData) {
         window.location.replace("/login");
-        // browserRouterRef.current.history.replace("/login"); //TODO: SI NO SE RENDERIZA NADA, NO HAY BROWSERROUTER
+        // browserRouterRef.current.history.replace("/login"); //TODO: **SI NO SE RENDERIZA NADA, NO HAY BROWSERROUTER
     }
-    console.log(userData);
-
-    // useEffect(()=>{
-
-    // },[]);
-
 
     return (<>
         <MyNavbar />
@@ -36,7 +30,7 @@ const Wallet = () => {
                         if (elem.type === "deposit") {
                             return (
                                 <div key={elem.id} className="div-wallet-history row mx-3 my-2">
-                                    <h3>Ingreso:</h3>
+                                    <h3>Ingreso: <span className="h5 text-secondary">{elem.date}</span></h3>
                                     <div className="col-8">
                                         <p>
                                             <span className="primary-color">Beneficiario: </span>
@@ -55,7 +49,7 @@ const Wallet = () => {
                         if (elem.type === "transference") {
                             return (
                                 <div key={elem.id} className="div-wallet-history row m-3">
-                                    <h3>Transferencia:</h3>
+                                    <h3>Transferencia: <span className="h5 text-secondary">{elem.date}</span></h3>
                                     <div className="col-8">
                                         <p>
                                             <span className="primary-color">Emisor: </span>
