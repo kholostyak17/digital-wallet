@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { browserRouterRef } from "../App";
 import MyNavbar from "../components/my-navbar";
@@ -7,11 +7,15 @@ const Wallet = () => {
     const userEmail = localStorage.getItem("email")
     const userData = useSelector(state => state.users.find(elem => elem.email === userEmail));
     if (!userData) {
-        localStorage.clear();
         window.location.replace("/login");
-        // browserRouterRef.current.history.replace("/login");
+        // browserRouterRef.current.history.replace("/login"); //TODO: SI NO SE RENDERIZA NADA, NO HAY BROWSERROUTER
     }
     console.log(userData);
+
+    // useEffect(()=>{
+
+    // },[]);
+
 
     return (<>
         <MyNavbar />
