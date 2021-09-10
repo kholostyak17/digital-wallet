@@ -28,12 +28,13 @@ const MyNavbar = () => {
                                 <Nav.Link href="add-money">Añadir dinero</Nav.Link>
                                 <Nav.Link href="transfer">Transferir</Nav.Link>
                             </Nav>
-                            <Nav.Link href="/">
+                            <Nav.Link href="#">
                                 <span
                                     onClick={() => {
                                         localStorage.removeItem("signedIn");
                                         localStorage.removeItem("email");
                                         localStorage.removeItem("name")
+                                        window.location.replace("/");
                                     }}
                                     className="text-danger" >
                                     Cerrar sesión
