@@ -14,7 +14,6 @@ const userReducer = (state, action) => {
             const position = state.users.indexOf(account);  //busco la posición en la que se encuentra de toda la lista
             const newTransaction = {    //genero nuevo objeto transacción de tipo depósito
                 type: "deposit",
-                idTransaction: parseInt(1), //getNewID();   //me devuelve un ID, e incrementa el valor para siguiente llamada
                 beneficiaryEmail: addData.email,
                 beneficiaryName: account.name,
                 amount: parseInt(addData.amount),
@@ -39,7 +38,6 @@ const userReducer = (state, action) => {
              //genero nuevos objetos transacción de tipo transferencia para sender y receptor
             const newTransactionSender = {
                 type: "transference",
-                idTransaction: parseInt(1),
                 senderEmail: transfData.senderEmail,
                 senderName: senderAccount.name,
                 receptorEmail: transfData.receptorEmail,
@@ -51,7 +49,6 @@ const userReducer = (state, action) => {
             senderAccount.money = parseInt(senderAccount.money) - parseInt(transfData.amount); //decremento
             const newTransactionReceptor = {
                 type: "transference",
-                idTransaction: parseInt(1),
                 senderEmail: transfData.senderEmail,
                 senderName: senderAccount.name,
                 receptorEmail: transfData.receptorEmail,
@@ -72,9 +69,22 @@ const userReducer = (state, action) => {
                 users: newStateTransf,
             };
         case GET_NEW_DATE:
-            const d = new Date();
-            return (d.getDate().toString().concat("/", d.getMonth().toString(), "/", d.getFullYear().toString(),
-                " ", d.getHours().toString(), ":", d.getMinutes().toString()));
+            const date = new Date();
+            const addZeroToOneDigitValues = (value) => {  //añade ceros para mantener elementos de fecha con dos digitos
+                if (value.toString().length===1){
+                    return value.padStart(2, "0");
+                }
+                else{
+                    return value;
+                }
+            };
+            const day = addZeroToOneDigitValues(date.getDate().toString());
+            const month = addZeroToOneDigitValues(date.getMonth().toString());
+            const year = date.getFullYear().toString();
+            const hour = addZeroToOneDigitValues(date.getHours().toString());
+            const minute = addZeroToOneDigitValues(date.getMinutes().toString());
+            const dateString = day.concat("/", month, "/", year, " ", hour, ":", minute);
+            return (dateString);
         default:
             return state;
     }

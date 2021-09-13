@@ -2,6 +2,7 @@ import { createStore } from 'redux';
 import reducer from "./reducers";
 
 const initialState = {
+    //recojo copia de datos desde el localstorage para prevenir perdida de datos en caso de cierre o recarga
     users: (
         localStorage.getItem("data")
             ?
@@ -9,7 +10,6 @@ const initialState = {
             :
             [
                 {
-                    id: 0,
                     email: "kholostyak17@gmail.com",
                     password: "ivan",
                     name: "Iván Jaén Trujillo",
@@ -17,48 +17,47 @@ const initialState = {
                     transactions: [
                         {
                             type: "deposit",
-                            idTransaction: 0,
                             beneficiaryEmail: "kholostyak17@gmail.com",
                             beneficiaryName: "Iván Jaén Trujillo",
                             amount: 500,
                             balance: 500,
+                            date: "10/8/2021 17:08"
                         },
                         {
                             type: "transference",
-                            idTransaction: 2,
                             senderEmail: "kholostyak17@gmail.com",
                             senderName: "Iván Jaén Trujillo",
-                            receptorEmail: "alberto@email.com",
+                            receptorEmail: "alberto@gmail.com",
                             receptorName: "Alberto García",
                             amount: -120,
                             balance: 380,
+                            date: "10/8/2021 22:34"
                         }
                     ],
                 },
                 {
-                    id: 1,
-                    email: "alberto@email.com",
+                    email: "alberto@gmail.com",
                     password: "alberto",
                     name: "Alberto García",
                     money: 620,
                     transactions: [
                         {
                             type: "deposit",
-                            idTransaction: 1,
-                            beneficiaryEmail: "alberto@email.com",
+                            beneficiaryEmail: "alberto@gmail.com",
                             beneficiaryName: "Alberto García",
                             amount: 500,
                             balance: 500,
+                            date: "10/8/2021 19:56"
                         },
                         {
                             type: "transference",
-                            idTransaction: 2,
                             senderEmail: "kholostyak17@gmail.com",
                             senderName: "Iván Jaén Trujillo",
-                            receptorEmail: "alberto@email.com",
+                            receptorEmail: "alberto@gmail.com",
                             receptorName: "Alberto García",
                             amount: 120,
                             balance: 620,
+                            date: "10/8/2021 22:34"
                         }
                     ],
                 },
@@ -71,17 +70,3 @@ export const store = createStore(
     initialState,
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
 );
-
-
-// const reducers = () =>{
-//     return{
-//         testing: "",
-//     };
-// };
-
-// export default () => {
-//     return{
-//         ...createStore(reducers)
-//     };
-// };
-
