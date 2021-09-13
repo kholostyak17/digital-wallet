@@ -10,12 +10,12 @@ const AddMoney = () => {
 
     const { register, handleSubmit } = useForm();
     const onSubmit = (data) => {
-        if(data.amount!==""){
-            dispatch(addMoneyAction({email: localStorage.getItem("email"), amount: data.amount}));
+        if (data.amount !== "") {
+            dispatch(addMoneyAction({ email: localStorage.getItem("email"), amount: data.amount }));
             browserRouterRef.current.history.replace("/wallet");
             alert("Depósito realizado con éxito");
         }
-        if(data.amount===""){
+        if (data.amount === "") {
             alert("Error: debes seleccionar una cantidad");
         }
     }
@@ -29,7 +29,10 @@ const AddMoney = () => {
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="">
                             <label htmlFor="amount" className="form-label mt-3">Cantidad:</label>
-                            <input {...register("amount")} type="number" name="amount" className="form-control" id="amount" min="1" />
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">$</span>
+                                <input {...register("amount")} type="number" name="amount" className="form-control" id="amount" min="1" />
+                            </div>
                             <div className="row">
                                 <div className="col">
                                     <label className="form-label mt-3">Número de tarjeta:</label>

@@ -14,20 +14,23 @@ const Transfer = () => {
 
     const { register, handleSubmit } = useForm();
     const onSubmit = (data) => {
-        if (data.amount === "" || data.email==="") {
-            alert("Error: debes seleccionar cantidad de dinero y destinatario");
+        if (data.amount === "") {
+            alert("Error: debes elegir una cantidad de dinero");
+        }
+        if (data.email === "") {
+            alert("Error: debes seleccionar un destinatario");
         }
         if (data.amount > users.find(elem => elem.email === mailLogedUser).money) {
             alert("Error: no dispones de tanto dinero. Tu saldo es: ".concat(avaibleMoney, " $"));
         }
-        if (data.email === localStorage.getItem("email")){
+        if (data.email === localStorage.getItem("email")) {
             alert("Error: no puedes realizar transacciones a tu propia cuenta");
         }
-        if(
-            (data.amount !== "" && data.email!=="") &&
+        if (
+            (data.amount !== "" && data.email !== "") &&
             (data.amount < users.find(elem => elem.email === mailLogedUser).money) &&
             (data.email !== localStorage.getItem("email"))
-        ){
+        ) {
             dispatch(makeTransferAction(
                 {
                     senderEmail: localStorage.getItem("email"),
@@ -48,7 +51,10 @@ const Transfer = () => {
                 <div>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <label htmlFor="amount" className="form-label mt-3">Cantidad:</label>
-                        <input {...register("amount")} type="number" name="amount" className="form-control" id="amount" min="1" />
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">$</span>
+                            <input {...register("amount")} type="number" name="amount" className="form-control" id="amount" min="1" />
+                        </div>
                         <div>
                             <label htmlFor="email" className="form-label mt-3">Email del destinatario</label>
                             <select {...register("email")} name="email" className="form-control" id="email" >
