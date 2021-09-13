@@ -54,7 +54,7 @@ const userReducer = (state, action) => {
                 receptorEmail: transfData.receptorEmail,
                 receptorName: receptorAccount.name,
                 amount: parseInt(transfData.amount),
-                balance: parseInt(senderAccount.money) + parseInt(transfData.amount),
+                balance: parseInt(receptorAccount.money) + parseInt(transfData.amount),
                 date: userReducer(state, { type: GET_NEW_DATE }),
             };
             receptorAccount.money = parseInt(receptorAccount.money) + parseInt(transfData.amount); //incremento
