@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { useSelector } from "react-redux";
 import CardDeposit from "../components/card-deposit";
 import CardTransference from "../components/card-transference";
