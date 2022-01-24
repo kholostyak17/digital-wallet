@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from 'react-bootstrap/Navbar';
+import { Link } from "react-router-dom"
 import Nav from 'react-bootstrap/Nav';
 import logo from "../logo.svg"
 
@@ -7,28 +8,28 @@ const MyNavbar = () => {
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="my-navbar px-3">
 
-            <Navbar.Brand href="/">
-                <span className="primary-color">
+            <Link className="primary-color text-decoration-none" to="/">
+                <span className="navbar-brand">
                     <img src={logo} className="App-logo-mini" alt="logo" />
-                    Digital Wallet
-                    </span>
-            </Navbar.Brand>
+                    <span className="primary-color">Digital Wallet</span>
+                </span>
+            </Link>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 {
                     !localStorage.getItem("signedIn")
                         ?
                         (<Nav className="ms-auto">
-                            <Nav.Link href="login">Iniciar sesión</Nav.Link>
+                            <Link className="text-decoration-none nav-link" to="login">Iniciar sesión</Link>
                         </Nav>)
                         :
                         (<>
                             <Nav className="me-auto">
-                                <Nav.Link href="wallet">Mi cartera</Nav.Link>
-                                <Nav.Link href="add-money">Añadir dinero</Nav.Link>
-                                <Nav.Link href="transfer">Transferir</Nav.Link>
+                                <Link className="text-decoration-none nav-link" to="wallet">Mi cartera</Link>
+                                <Link className="text-decoration-none nav-link" to="add-money">Añadir dinero</Link>
+                                <Link className="text-decoration-none nav-link" to="transfer">Transferir</Link>
                             </Nav>
-                            <Nav.Link href="#">
+                            <Link className="text-decoration-none text-danger nav-link" to="#">
                                 <span
                                     onClick={() => {
                                         localStorage.removeItem("signedIn");
@@ -36,10 +37,10 @@ const MyNavbar = () => {
                                         localStorage.removeItem("name")
                                         window.location.replace("/");
                                     }}
-                                    className="text-danger" >
+                                    >
                                     Cerrar sesión
                                 </span>
-                            </Nav.Link>
+                            </Link>
                         </>)
                 }
             </Navbar.Collapse>
