@@ -12,7 +12,8 @@ const Register = () => {
 
     const { register, handleSubmit } = useForm();
     const onSubmit = (data) => {
-        if (!users.find(elem => elem.email === data.email)) {
+        if ( !(data.name==="" || data.email==="" || data.password==="") && 
+             (!users.find(elem => elem.email === data.email))) {
             data.money = 0;
             data.transactions = [];
             dispatch(signUpUserAction(data));
@@ -20,6 +21,9 @@ const Register = () => {
             localStorage.setItem("email", data.email);
             localStorage.setItem("signedIn", true);
             browserRouterRef.current.history.replace("/wallet");
+        }
+        else if (data.name==="" || data.email==="" || data.password==="") {
+            alert("Error: Introduce datos en todos los campos");
         }
         else {
             alert("Error: Dirección de correo electrónico ya existente");
@@ -34,15 +38,15 @@ const Register = () => {
                 {/* <button onClick={()=>dispatch(addMoneyAction("CHUJ CIPA DUPA JEBAC"))}>CHUJ</button> */}
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="div-register-form mb-3">
-                        <label htmlFor="name" className="form-label mt-3">Nombre</label>
+                        <label htmlFor="name" className="form-label mt-3">Nombre *</label>
                         <input {...register("name")} type="text" name="name" className="form-control" id="name" />
-                        <label htmlFor="email" className="form-label mt-3">Correo electrónico</label>
+                        <label htmlFor="email" className="form-label mt-3">Correo electrónico *</label>
                         <input {...register("email")} type="email" name="email" className="form-control" id="email" />
-                        <label htmlFor="password" className="form-label mt-3">Contraseña</label>
-                        <input {...register("password")} type="password" name="password" className="form-control" id="password" />
+                        <label htmlFor="password" className="form-label mt-3">Contraseña *</label>
+                        <input {...register("password")} type="password" name="password" className="form-control" id="password" minLength={4} />
                         <div className="text-center">
                             <input type="submit" value="Registrarse" className="button-green m-5" />
-                            <p>¿Ya tienes cuenta? <Link to="login"><span className="primary-color">Inicia sesión</span></Link></p>
+                            <p>¿Ya tienes cuenta? <Link className="text-decoration-none primary-color" to="login">Inicia sesión</Link></p>
                         </div>
                     </div>
                 </form>

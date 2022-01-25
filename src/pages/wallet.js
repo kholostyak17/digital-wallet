@@ -23,13 +23,11 @@ const Wallet = () => {
                 <span className="primary-color h3"> {userData.money.toString().concat(" $")}</span>
             </p>
             <div>
-                <h3 className="mt-5 primary-color">Últimos movimientos</h3>
-                <div className="div-last-transactions">
-                    {(userData.transactions === [])
-                        ?
-                        "Todavía no hay movimientos :("
-                        :
-                        (userData.transactions.map((elem, index) => {
+                <h3 className="mt-5 primary-color">Últimos movimientos</h3>  
+                {(userData.transactions.length === 0)
+                    ? <div>Todavía no hay movimientos :(</div>
+                    : <div id="transactions-list" className="div-last-transactions">
+                        {(userData.transactions.map((elem, index) => {
                             if (elem.type === "deposit") {
                                 return <CardDeposit
                                     key={index}
@@ -54,7 +52,8 @@ const Wallet = () => {
                             }
                             return <></>
                         }))}
-                </div>
+                    </div>
+                }
             </div >
         </div>
     </>);
