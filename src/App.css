@@ -76,7 +76,7 @@ body{
   background-color: rgba(0, 0, 0, 0.5);
   max-height: 54vh;
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   overflow-y: auto;
 }
 

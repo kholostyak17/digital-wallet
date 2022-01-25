@@ -7,6 +7,7 @@ import MyNavbar from "../components/my-navbar";
 const Wallet = () => {
     const userEmail = localStorage.getItem("email")
     const userData = useSelector(state => state.users.find(elem => elem.email === userEmail));
+    const transactions = userData.transactions.slice().reverse();
 
     if (!userData) {
         window.location.replace("/login");
@@ -24,10 +25,10 @@ const Wallet = () => {
             </p>
             <div>
                 <h3 className="mt-5 primary-color">Últimos movimientos</h3>  
-                {(userData.transactions.length === 0)
+                {(transactions.length === 0)
                     ? <div>Todavía no hay movimientos :(</div>
                     : <div id="transactions-list" className="div-last-transactions">
-                        {(userData.transactions.map((elem, index) => {
+                        {(transactions.map((elem, index) => {
                             if (elem.type === "deposit") {
                                 return <CardDeposit
                                     key={index}

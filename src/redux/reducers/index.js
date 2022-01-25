@@ -79,7 +79,7 @@ const userReducer = (state, action) => {
                 }
             };
             const day = addZeroToOneDigitValues(date.getDate().toString());
-            const month = addZeroToOneDigitValues(date.getMonth().toString());
+            const month = addZeroToOneDigitValues((date.getMonth()+1).toString());
             const year = date.getFullYear().toString();
             const hour = addZeroToOneDigitValues(date.getHours().toString());
             const minute = addZeroToOneDigitValues(date.getMinutes().toString());
