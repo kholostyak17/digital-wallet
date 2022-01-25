@@ -14,17 +14,21 @@ const Transfer = () => {
 
     const { register, handleSubmit } = useForm();
     const onSubmit = (data) => {
+        let alertMessage = "Error:\n";
         if (data.amount === "") {
-            alert("Error: debes elegir una cantidad de dinero");
+            alertMessage = alertMessage + ("- Debes elegir una cantidad de dinero.\n");
         }
         if (data.email === "") {
-            alert("Error: debes seleccionar un destinatario");
+            alertMessage = alertMessage + ("- Debes seleccionar un destinatario.\n");
         }
         if (data.amount > users.find(elem => elem.email === mailLogedUser).money) {
-            alert("Error: no dispones de tanto dinero. Tu saldo es: ".concat(avaibleMoney, " $"));
+            alertMessage = alertMessage + ("- No dispones de tanto dinero. Tu saldo es: ".concat(avaibleMoney, " $.\n"));
         }
         if (data.email === localStorage.getItem("email")) {
-            alert("Error: no puedes realizar transacciones a tu propia cuenta");
+            alertMessage = alertMessage + ("- No puedes realizar transacciones a tu propia cuenta.\n");
+        }
+        if (alertMessage!=="Error:\n") {
+            alert(alertMessage);
         }
         if (
             (data.amount !== "" && data.email !== "") &&
