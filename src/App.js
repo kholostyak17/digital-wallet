@@ -8,6 +8,8 @@ import Transfer from "./pages/transfer";
 import AddMoney from "./pages/add-money";
 import Login from "./pages/login";
 import Register from "./pages/register";
+import MyNavbar from "./components/my-navbar";
+import MyFooter from "./components/my-footer";
 
 export const browserRouterRef = React.createRef();
 
@@ -15,6 +17,7 @@ function App() {
 	return (
 		<div className="div-app">
 			<BrowserRouter ref={browserRouterRef}>
+				<MyNavbar />
 				<Switch>
 					<Route exact path="/">
 						<Home />
@@ -35,9 +38,10 @@ function App() {
 						<Register />
 					</Route>
 					<Route>
-						<h1>Not found!</h1>
+						<h1>Código 404: Ruta no encontrada :(</h1>
 					</Route>
 				</Switch>
+				<MyFooter />
 			</BrowserRouter>
 		</div>
 	);

@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useSelector } from "react-redux";
 import { browserRouterRef } from "../App";
-import MyNavbar from "../components/my-navbar";
 
 const Login = () => {
     const users = useSelector(state => state.users);
@@ -23,8 +22,7 @@ const Login = () => {
         }
     };
 
-    return (<>
-        <MyNavbar />
+    return (
         <div className="div-login">
             <h3 className="primary-color">Iniciar sesión</h3>
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -38,7 +36,7 @@ const Login = () => {
             </form>
             <p>¿No tienes cuenta? <Link className="text-decoration-none primary-color" to="register">Regístrate</Link></p>
         </div>
-    </>);
+    );
 };
 
 export default Login;

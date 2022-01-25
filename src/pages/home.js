@@ -1,12 +1,10 @@
 import React from "react";
 import { browserRouterRef } from "../App";
-import MyNavbar from "../components/my-navbar";
 import logo from "../logo.svg"
 
 const Home = () => {
 
-    return (<>
-        <MyNavbar />
+    return (
         <div className="container my-3 text-center">
             <h1 className="primary-color">DIGITAL WALLET</h1>
             <div className="text-center p-5">
@@ -30,7 +28,7 @@ const Home = () => {
                 </div>)
             }
         </div>
-    </>);
+    );
 };
 
 export default Home;

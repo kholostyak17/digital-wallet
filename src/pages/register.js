@@ -4,7 +4,6 @@ import { useForm } from "react-hook-form";
 import { useSelector, useDispatch } from "react-redux";
 import { signUpUserAction } from "../redux/actions";
 import { browserRouterRef } from "../App";
-import MyNavbar from "../components/my-navbar";
 
 const Register = () => {
     const dispatch = useDispatch();
@@ -30,8 +29,7 @@ const Register = () => {
         }
     };
 
-    return (<>
-        <MyNavbar />
+    return (
         <div className="container">
             <div className="col-12 col-md-5 m-3">
                 <h2 className="primary-color">Registro</h2>
@@ -55,7 +53,7 @@ const Register = () => {
                 })} */}
             </div>
         </div>
-    </>);
+    );
 };
 
 export default Register;

@@ -3,7 +3,6 @@ import { useForm } from "react-hook-form";
 import { browserRouterRef } from "../App";
 import { useDispatch } from "react-redux";
 import { addMoneyAction } from "../redux/actions";
-import MyNavbar from "../components/my-navbar";
 
 const AddMoney = () => {
     const dispatch = useDispatch();
@@ -20,8 +19,7 @@ const AddMoney = () => {
         }
     }
 
-    return (<>
-        <MyNavbar />
+    return (
         <div className="container my-3">
             <div className="col-12 col-md-5">
                 <h2 className="primary-color">Añadir dinero a la cuenta</h2>
@@ -57,7 +55,7 @@ const AddMoney = () => {
                 </div>
             </div>
         </div >
-    </>);
+    );
 };
 
 export default AddMoney;

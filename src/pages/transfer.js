@@ -3,7 +3,6 @@ import { useForm } from "react-hook-form";
 import { useSelector, useDispatch } from "react-redux";
 import { makeTransferAction } from "../redux/actions";
 import { browserRouterRef } from "../App";
-import MyNavbar from "../components/my-navbar";
 
 const Transfer = () => {
     const dispatch = useDispatch();
@@ -47,8 +46,7 @@ const Transfer = () => {
         }
     }
 
-    return (<>
-        <MyNavbar />
+    return (
         <div className="container my-3">
             <div className="col-12 col-md-5">
                 <h2 className="primary-color">Realizar nueva transferencia</h2>
@@ -79,7 +77,7 @@ const Transfer = () => {
                 </div>
             </div>
         </div>
-    </>);
+    );
 };
 
 export default Transfer;

@@ -2,7 +2,6 @@ import React from "react";
 import { useSelector } from "react-redux";
 import CardDeposit from "../components/card-deposit";
 import CardTransference from "../components/card-transference";
-import MyNavbar from "../components/my-navbar";
 
 const Wallet = () => {
     const userEmail = localStorage.getItem("email")
@@ -13,8 +12,7 @@ const Wallet = () => {
         window.location.replace("/login");
     }
 
-    return (<>
-        <MyNavbar />
+    return (
         <div className="container my-3">
             <h2 className="primary-color">
                 {"Bienvenido ".concat(localStorage.getItem("name"))}
@@ -57,7 +55,7 @@ const Wallet = () => {
                 }
             </div >
         </div>
-    </>);
+    );
 };
 
 export default Wallet;
