@@ -2,12 +2,14 @@ import { SIGNUP_USER, ADD_MONEY, MAKE_TRANSFER, GET_NEW_DATE } from "../actions/
 
 const userReducer = (state, action) => {
     switch (action.type) {
+        
         case SIGNUP_USER:
             localStorage.setItem("data", JSON.stringify([...state.users, action.payload])) //guardo copia en localstorage
             return {
                 ...state,
                 users: [...state.users, action.payload]
             };
+
         case ADD_MONEY:
             const addData = action.payload;
             let account = state.users.find(elem => elem.email === addData.email); //guardo objeto con datos de 1 usuario
@@ -29,6 +31,7 @@ const userReducer = (state, action) => {
                 ...state,
                 users: newStateAdd,
             };
+
         case MAKE_TRANSFER:
             const transfData = action.payload;
             let senderAccount = state.users.find(elem => elem.email === transfData.senderEmail);
@@ -68,6 +71,7 @@ const userReducer = (state, action) => {
                 ...state,
                 users: newStateTransf,
             };
+
         case GET_NEW_DATE:
             const date = new Date();
             const addZeroToOneDigitValues = (value) => {  //añade ceros para mantener elementos de fecha con dos digitos
@@ -85,6 +89,7 @@ const userReducer = (state, action) => {
             const minute = addZeroToOneDigitValues(date.getMinutes().toString());
             const dateString = day.concat("/", month, "/", year, " ", hour, ":", minute);
             return (dateString);
+
         default:
             return state;
     }
@@ -92,9 +97,11 @@ const userReducer = (state, action) => {
 
 export default userReducer;
 
+
+//TODO: ADD ID TO ALL TRANSACTIONS
 //global functions
 // const getNewID = () => {
-    //     const id = store.id;
-    //     store.id++;
-    //     return (id);
-    // };
+//     const id = store.id;
+//     store.id++;
+//     return (id);
+// };

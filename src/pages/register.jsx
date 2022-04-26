@@ -11,8 +11,8 @@ const Register = () => {
 
     const { register, handleSubmit } = useForm();
     const onSubmit = (data) => {
-        if ( !(data.name==="" || data.email==="" || data.password==="") && 
-             (!users.find(elem => elem.email === data.email))) {
+        if (!(data.name === "" || data.email === "" || data.password === "") &&
+            (!users.find(elem => elem.email === data.email))) {
             data.money = 0;
             data.transactions = [];
             dispatch(signUpUserAction(data));
@@ -21,7 +21,7 @@ const Register = () => {
             localStorage.setItem("signedIn", true);
             browserRouterRef.current.history.replace("/wallet");
         }
-        else if (data.name==="" || data.email==="" || data.password==="") {
+        else if (data.name === "" || data.email === "" || data.password === "") {
             alert("Error: Introduce datos en todos los campos");
         }
         else {
@@ -48,9 +48,6 @@ const Register = () => {
                         </div>
                     </div>
                 </form>
-                {/* {users.map(user => {
-                    return (<p>{user.email}</p>);
-                })} */}
             </div>
         </div>
     );

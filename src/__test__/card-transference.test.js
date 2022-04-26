@@ -1,7 +1,7 @@
 import React from "react";
 import "@testing-library/jest-dom/extend-expect";
 import { render } from "@testing-library/react";
-import CardTransference from "./components/card-transference";
+import CardTransference from "../components/card-transference";
 
 
 const renderComponent=()=>{

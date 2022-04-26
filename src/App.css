@@ -10,6 +10,8 @@ body{
 }
 .div-app{
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   background-color: #212529;
   color: white;
   font-family: 'Nova Square', cursive;
@@ -46,6 +48,7 @@ body{
 
 /* FOOTER STYLES */
 .my-footer{
+  margin-top: auto;
   border-top:  0.15rem;
   border-top-style: solid;
   border-color: #14b471;
@@ -54,14 +57,21 @@ body{
 /* LOGIN STYLES */
 .div-login{
   background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 0.5rem;
   text-align: center;
-  width: 65%;
-  height: 25rem;
-  margin: 3rem auto;
+  margin: auto;
   padding: 2rem;
+  height: 25rem;
+  width: 35rem;
 }
+@media only screen and (max-width: 35rem) {
+  .div-login{ 
+    width: 95%; 
+  }
+}
+
 .div-login-form{
-  width: 70%;
+  width: 80%;
   margin: auto;
 }
 
