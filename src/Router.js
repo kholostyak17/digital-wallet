@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import './App.css';
+import './styles/index.css';
 
 import Home from "./pages/home";
 import Wallet from "./pages/wallet";
@@ -13,7 +13,7 @@ import MyFooter from "./components/my-footer";
 
 export const browserRouterRef = React.createRef();
 
-function App() {
+function Router() {
 	return (
 		<div className="div-app">
 			<BrowserRouter ref={browserRouterRef}>
@@ -47,4 +47,4 @@ function App() {
 	);
 }
 
-export default App;
+export default Router;

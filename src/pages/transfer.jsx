@@ -2,7 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useSelector, useDispatch } from "react-redux";
 import { makeTransferAction } from "../redux/actions";
-import { browserRouterRef } from "../App";
+import { browserRouterRef } from "../Router";
 
 const Transfer = () => {
     const dispatch = useDispatch();
@@ -26,7 +26,7 @@ const Transfer = () => {
         if (data.email === localStorage.getItem("email")) {
             alertMessage = alertMessage + ("- No puedes realizar transacciones a tu propia cuenta.\n");
         }
-        if (alertMessage!=="Error:\n") {
+        if (alertMessage !== "Error:\n") {
             alert(alertMessage);
         }
         if (

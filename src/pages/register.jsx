@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import { useForm } from "react-hook-form";
 import { useSelector, useDispatch } from "react-redux";
 import { signUpUserAction } from "../redux/actions";
-import { browserRouterRef } from "../App";
+import { browserRouterRef } from "../Router";
 
 const Register = () => {
     const dispatch = useDispatch();

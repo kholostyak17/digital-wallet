@@ -15,7 +15,7 @@ body{
   background-color: #212529;
   color: white;
   font-family: 'Nova Square', cursive;
-  background-image: url(./background.jpeg);
+  background-image: url(../assets/background.jpeg);
 }
 .button-green{
   border-radius: 0.25rem;

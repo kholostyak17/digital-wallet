@@ -1,18 +1,18 @@
-# Getting Started with Create React App
+# Digital Wallet
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is deployed here: [digitalwallet.vercel.app](https://digitalwallet.vercel.app)
+
+\*note: this app was developed in spanish language
 
 ## Available Scripts
 
-In the project directory, you can run:
+- In the project directory, you can run this script to install node dependencies:  
+  `npm install`
 
-### `npm install`
-### `npm start`
+- Next you can run the app in development mode with this script:  
+  `npm start`  
+  Open [http://localhost:3000](http://localhost:3000) to view it in the browser.  
+  The page will reload if you make edits. \ You will also see any lint errors in the console.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm run test`
+- To run tests you can run this script  
+  `npm run test`

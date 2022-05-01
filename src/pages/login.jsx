@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useSelector } from "react-redux";
-import { browserRouterRef } from "../App";
+import { browserRouterRef } from "../Router";
 
 const Login = () => {
     const users = useSelector(state => state.users);
@@ -32,7 +32,7 @@ const Login = () => {
                     <label htmlFor="password" className="form-label mt-3">Contraseña</label>
                     <input {...register("password")} type="password" name="password" className="form-control" id="password" />
                 </div>
-                <input type="submit" value="Acceder" className="button-green" />
+                <input type="submit" value="Acceder" className="button-green mb-4" />
             </form>
             <p>¿No tienes cuenta? <Link className="text-decoration-none primary-color" to="register">Regístrate</Link></p>
         </div>

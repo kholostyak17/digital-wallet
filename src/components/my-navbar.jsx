@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from "react-router-dom"
 import Nav from 'react-bootstrap/Nav';
-import logo from "../logo.svg"
+import logo from "../assets/logo.svg"
 import { useLocation } from 'react-router-dom';
 
 

@@ -1,6 +1,6 @@
 import React from "react";
-import { browserRouterRef } from "../App";
-import logo from "../logo.svg"
+import { browserRouterRef } from "../Router";
+import logo from "../assets/logo.svg"
 
 const Home = () => {
 
