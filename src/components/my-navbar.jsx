@@ -14,7 +14,7 @@ const MyNavbar = () => {
     }, [location]);
 
     return (
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="my-navbar px-3">
+        <Navbar collapseOnSelect expand="lg" variant="dark" className="my-navbar px-3">
             <Link className="primary-color text-decoration-none" to="/">
                 <span className="navbar-brand">
                     <img src={logo} className="App-logo-mini" alt="logo" />
@@ -33,17 +33,14 @@ const MyNavbar = () => {
                             <Link className="text-decoration-none nav-link" to="add-money">Añadir dinero</Link>
                             <Link className="text-decoration-none nav-link" to="transfer">Transferir</Link>
                         </Nav>
-                        <Link className="text-decoration-none text-danger nav-link" to="#">
-                            <span
-                                onClick={() => {
-                                    localStorage.removeItem("signedIn");
-                                    localStorage.removeItem("email");
-                                    localStorage.removeItem("name")
-                                    window.location.replace("/");
-                                }}
-                            >
-                                Cerrar sesión
-                            </span>
+                        <Link className="text-decoration-none text-danger nav-link" to="/"
+                            onClick={() => {
+                                localStorage.removeItem("signedIn");
+                                localStorage.removeItem("email");
+                                localStorage.removeItem("name")
+                            }
+                            }>
+                            Cerrar sesión
                         </Link>
                     </>
                 }

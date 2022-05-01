@@ -15,6 +15,7 @@ body{
   background-color: #212529;
   color: white;
   font-family: 'Nova Square', cursive;
+  background-image: url(./background.jpeg);
 }
 .button-green{
   border-radius: 0.25rem;
@@ -41,17 +42,16 @@ body{
 
 /* NAVBAR STYLES */
 .my-navbar{
-  border-bottom:  0.15rem;
-  border-bottom-style: solid;
-  border-color: #14b471;
+  background-color: #00000055;
+  box-shadow: 0px 0px 5px 1px #14b471;
+  margin-bottom: 1.2rem;
 }
 
 /* FOOTER STYLES */
 .my-footer{
+  background-color: #00000055;
+  box-shadow: 0px 0px 5px 1px #14b471;
   margin-top: auto;
-  border-top:  0.15rem;
-  border-top-style: solid;
-  border-color: #14b471;
 }
 
 /* LOGIN STYLES */

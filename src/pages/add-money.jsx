@@ -29,7 +29,7 @@ const AddMoney = () => {
                             <label htmlFor="amount" className="form-label mt-3">Cantidad:</label>
                             <div class="input-group mb-3">
                                 <span class="input-group-text">$</span>
-                                <input {...register("amount")} type="number" name="amount" className="form-control" id="amount" min="1" />
+                                <input {...register("amount")} type="number" name="amount" className="form-control" id="amount" min="1" max="100000000" />
                             </div>
                             <div className="row">
                                 <div className="col">
