@@ -53,8 +53,8 @@ const Transfer = () => {
                 <div>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <label htmlFor="amount" className="form-label mt-3">Cantidad:</label>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text">$</span>
+                        <div className="input-group mb-3">
+                            <span className="input-group-text">$</span>
                             <input {...register("amount")} type="number" name="amount" className="form-control" id="amount" min="1" />
                         </div>
                         <div>

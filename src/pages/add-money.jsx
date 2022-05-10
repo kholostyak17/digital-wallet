@@ -27,8 +27,8 @@ const AddMoney = () => {
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="">
                             <label htmlFor="amount" className="form-label mt-3">Cantidad:</label>
-                            <div class="input-group mb-3">
-                                <span class="input-group-text">$</span>
+                            <div className="input-group mb-3">
+                                <span className="input-group-text">$</span>
                                 <input {...register("amount")} type="number" name="amount" className="form-control" id="amount" min="1" max="100000000" />
                             </div>
                             <div className="row">
