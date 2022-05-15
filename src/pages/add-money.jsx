@@ -1,6 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { browserRouterRef } from "../Router";
+import { browserRouterRef } from "../router";
 import { useDispatch } from "react-redux";
 import { addMoneyAction } from "../redux/actions";
 

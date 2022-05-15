@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Router from './Router';
+import Router from './router';
 import reportWebVitals from './reportWebVitals';
 import "bootstrap/dist/css/bootstrap.css";  //bootstrap imported
 import { Provider } from "react-redux"

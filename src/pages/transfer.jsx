@@ -2,7 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useSelector, useDispatch } from "react-redux";
 import { makeTransferAction } from "../redux/actions";
-import { browserRouterRef } from "../Router";
+import { browserRouterRef } from "../router";
 
 const Transfer = () => {
     const dispatch = useDispatch();
