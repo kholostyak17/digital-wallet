@@ -1,0 +1,61 @@
+{
+  "common": {
+    "submit": "Enviar",
+    "amount": "Cantidad",
+    "continue": "Continuar",
+    "sign_up": "Regístrate",
+    "sign_in": "Inicia sesión",
+    "log_in": "Accede",
+    "register": "Registro",
+    "full_name": "Nombre completo",
+    "email": "Correo electrónico",
+    "password": "Contraseña"
+  },
+  "alerts": {
+    "add_funds_success": "Depósito realizado con éxito",
+    "error_null_amount": "Error: debes seleccionar una cantidad",
+    "error_wrong_credentials": "Usuario no encontrado / Credenciales incorrectas",
+    "error_empty_fields": "Completa todos los campos mandatorios",
+    "error_already_registered": "Error: Dirección de correo electrónico ya existente",
+    "reason_null_amount": "- Debes elegir una cantidad de dinero.\n",
+    "reason_null_receiver": "- Debes seleccionar un destinatario.\n",
+    "reason_insuficent_funds": "- No dispones de tanto dinero. Tu saldo es: {{ availableMoney }} $.\n",
+    "reason_same_receiver": "- No puedes realizar transacciones a tu propia cuenta.\n"
+  },
+  "navbar": {
+    "my_wallet": "Mi cartera",
+    "add_funds": "Añadir fondos",
+    "transfer": "Transferir",
+    "sign_off": "Cerrar sesión"
+  },
+  "footer": {
+    "created_by": "Simple app created by"
+  },
+  "home": {
+    "go_to_wallet": "Ir a mi cartera"
+  },
+  "login": {
+    "no_account": "Don't have an account?"
+  },
+  "register": {
+    "already_got_account": "Do you already have account?"
+  },
+  "wallet": {
+    "welcome_message": "Bienvenido/a",
+    "actual_balance": "Your current balance is: ",
+    "last_movements": "Last movements",
+    "empty_historial": "No movements available yet :("
+  },
+  "add_funds": {
+    "add_funds": "Añadir fondos",
+    "amount": "Cantidad",
+    "card_number": "Número de tarjeta",
+    "expiration_date": "Fecha de v.",
+    "cvv": "CVV",
+    "pay": "Pagar"
+  },
+  "transfer": {
+    "new_transfer": "Make new transfer",
+    "receiver": "Destinatario/a"
+  }
+}

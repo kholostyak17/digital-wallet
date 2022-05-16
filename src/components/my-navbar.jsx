@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 import Nav from 'react-bootstrap/Nav';
 import logo from "../assets/logo.svg"
 import { useLocation } from 'react-router-dom';
+import { t } from "i18next";
 
 
 const MyNavbar = () => {
@@ -25,13 +26,13 @@ const MyNavbar = () => {
             <Navbar.Collapse id="responsive-navbar-nav">
                 {!isUserSignedIn
                     ? <Nav className="ms-auto">
-                        <Link className="text-decoration-none nav-link" to="login">Iniciar sesión</Link>
+                        <Link className="text-decoration-none nav-link" to="login">{t("common.log_in")}</Link>
                     </Nav>
                     : <>
                         <Nav className="me-auto">
-                            <Link className="text-decoration-none nav-link" to="wallet">Mi cartera</Link>
-                            <Link className="text-decoration-none nav-link" to="add-money">Añadir dinero</Link>
-                            <Link className="text-decoration-none nav-link" to="transfer">Transferir</Link>
+                            <Link className="text-decoration-none nav-link" to="wallet">{t("navbar.my_wallet")}</Link>
+                            <Link className="text-decoration-none nav-link" to="add-funds">{t("navbar.add_funds")}</Link>
+                            <Link className="text-decoration-none nav-link" to="transfer">{t("navbar.transfer")}</Link>
                         </Nav>
                         <Link className="text-decoration-none text-danger nav-link" to="/"
                             onClick={() => {
@@ -40,7 +41,7 @@ const MyNavbar = () => {
                                 localStorage.removeItem("name")
                             }
                             }>
-                            Cerrar sesión
+                            {t("navbar.sign_off")}
                         </Link>
                     </>
                 }

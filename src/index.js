@@ -5,6 +5,7 @@ import reportWebVitals from './reportWebVitals';
 import "bootstrap/dist/css/bootstrap.css";  //bootstrap imported
 import { Provider } from "react-redux"
 import { store } from "./redux/store"
+import './i18n';
 
 ReactDOM.render(
   <React.StrictMode>

@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { useSelector, useDispatch } from "react-redux";
 import { signUpUserAction } from "../redux/actions";
 import { browserRouterRef } from "../router";
+import { t } from "i18next";
 
 const Register = () => {
     const dispatch = useDispatch();
@@ -22,29 +23,29 @@ const Register = () => {
             browserRouterRef.current.history.replace("/wallet");
         }
         else if (data.name === "" || data.email === "" || data.password === "") {
-            alert("Error: Introduce datos en todos los campos");
+            alert(t("alerts.error_empty_fields"));
         }
         else {
-            alert("Error: Dirección de correo electrónico ya existente");
+            alert(t("alerts.error_already_registered"));
         }
     };
 
     return (
         <div className="container">
             <div className="col-12 col-md-5 m-3">
-                <h2 className="primary-color">Registro</h2>
-                {/* <button onClick={()=>dispatch(addMoneyAction("CHUJ CIPA DUPA JEBAC"))}>CHUJ</button> */}
+                <h2 className="primary-color fw-bold">{t("common.sign_up")}</h2>
+                {/* <button onClick={()=>dispatch(AddFundsAction("CHUJ CIPA DUPA JEBAC"))}>CHUJ</button> */}
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="div-register-form mb-3">
-                        <label htmlFor="name" className="form-label mt-3">Nombre *</label>
-                        <input {...register("name")} type="text" name="name" className="form-control" id="name" />
-                        <label htmlFor="email" className="form-label mt-3">Correo electrónico *</label>
-                        <input {...register("email")} type="email" name="email" className="form-control" id="email" />
-                        <label htmlFor="password" className="form-label mt-3">Contraseña *</label>
-                        <input {...register("password")} type="password" name="password" className="form-control" id="password" minLength={4} />
+                        <label htmlFor="name" className="form-label mt-3">{t("common.full_name")} *</label>
+                        <input {...register("name")} type="text" name="name" className="form-control" id="name" autocomplete="new-password"/>
+                        <label htmlFor="email" className="form-label mt-3">{t("common.email")} *</label>
+                        <input {...register("email")} type="email" name="email" className="form-control" id="email" autocomplete="new-password"/>
+                        <label htmlFor="password" className="form-label mt-3">{t("common.password")} *</label>
+                        <input {...register("password")} type="password" name="password" className="form-control" id="password" minLength={4} autocomplete="new-password"/>
                         <div className="text-center">
-                            <input type="submit" value="Registrarse" className="button-green m-5" />
-                            <p>¿Ya tienes cuenta? <Link className="text-decoration-none primary-color" to="login">Inicia sesión</Link></p>
+                            <input type="submit" value={t("common.continue")} className="button-green m-5" />
+                            <p>{t("register.already_got_account")} <Link className="text-decoration-none primary-color" to="login">{t("common.sign_in")}</Link></p>
                         </div>
                     </div>
                 </form>

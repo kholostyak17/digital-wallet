@@ -1,0 +1,61 @@
+{
+  "common": {
+    "submit": "Submit",
+    "amount": "Amount",
+    "continue": "Continue",
+    "sign_up": "Sign up",
+    "sign_in": "Sign in",
+    "log_in": "Log in",
+    "register": "Register",
+    "full_name": "Full name",
+    "email": "Email address",
+    "password": "Password"
+  },
+  "alerts": {
+    "add_funds_success": "Deposit made successfully",
+    "error_null_amount": "Error: you must select an amount",
+    "error_wrong_credentials": "User not found / Incorrect credentials",
+    "error_empty_fields": "Error: Complete all mandatory fields",
+    "error_already_registered": "Error: Email address already exists",
+    "reason_null_amount": "- You must select an amount of money.\n",
+    "reason_null_receiver": "- You must select a receiver.\n",
+    "reason_insuficent_funds": "- You don't have that much money. Your current balance is: {{ availableMoney }} $.\n",
+    "reason_same_receiver": "- You cannot make transactions to your own account.\n"
+  },
+  "navbar": {
+    "my_wallet": "My wallet",
+    "add_funds": "Add funds",
+    "transfer": "Transfer",
+    "sign_off": "Sign off"
+  },
+  "footer": {
+    "created_by": "Simple app created by"
+  },
+  "home": {
+    "go_to_wallet": "Go to wallet"
+  },
+  "login": {
+    "no_account": "Don't have an account?"
+  },
+  "register": {
+    "already_got_account": "Do you already have account?"
+  },
+  "wallet": {
+    "welcome_message": "Welcome",
+    "actual_balance": "Your current balance is: ",
+    "last_movements": "Last movements",
+    "empty_historial": "No movements available yet :("
+  },
+  "add_funds": {
+    "add_funds": "Add funds to the account",
+    "amount": "Amount",
+    "card_number": "Card number",
+    "expiration_date": "Expiration date",
+    "cvv": "CVV",
+    "pay": "Pay"
+  },
+  "transfer": {
+    "new_transfer": "Make new transfer",
+    "receiver": "Receiver"
+  }
+}

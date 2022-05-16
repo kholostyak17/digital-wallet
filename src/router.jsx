@@ -5,7 +5,7 @@ import "./styles/index.css";
 import Home from "./pages/home";
 import Wallet from "./pages/wallet";
 import Transfer from "./pages/transfer";
-import AddMoney from "./pages/add-money";
+import AddFunds from "./pages/add-funds";
 import Login from "./pages/login";
 import Register from "./pages/register";
 import MyNavbar from "./components/my-navbar";
@@ -35,8 +35,8 @@ function Router() {
           <PrivateRoute exact path="/transfer">
             <Transfer />
           </PrivateRoute>
-          <PrivateRoute exact path="/add-money">
-            <AddMoney />
+          <PrivateRoute exact path="/add-funds">
+            <AddFunds />
           </PrivateRoute>
           <UnloggedRoute exact path="/login">
             <Login />

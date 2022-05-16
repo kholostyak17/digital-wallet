@@ -4,7 +4,7 @@ export const signUpUserAction = newAccountData => ({
     type: SIGNUP_USER,
     payload: newAccountData,
 });
-export const addMoneyAction = data => ({
+export const AddFundsAction = data => ({
     type: ADD_MONEY,
     payload: data,
 });

@@ -2,8 +2,6 @@
 
 This project is deployed here: [digitalwallet.vercel.app](https://digitalwallet.vercel.app)
 
-\*note: this app was developed in spanish language
-
 ## Available Scripts
 
 - In the project directory, you can run this script to install node dependencies:  

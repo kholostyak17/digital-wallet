@@ -3,28 +3,29 @@ import { useForm } from "react-hook-form";
 import { useSelector, useDispatch } from "react-redux";
 import { makeTransferAction } from "../redux/actions";
 import { browserRouterRef } from "../router";
+import { t } from "i18next";
 
 const Transfer = () => {
     const dispatch = useDispatch();
     const users = useSelector(state => state.users);
 
     const mailLogedUser = localStorage.getItem("email");
-    const avaibleMoney = parseInt(users.find(elem => elem.email === mailLogedUser).money);
+    const availableMoney = parseInt(users.find(elem => elem.email === mailLogedUser).money);
 
     const { register, handleSubmit } = useForm();
     const onSubmit = (data) => {
         let alertMessage = "Error:\n";
         if (data.amount === "") {
-            alertMessage = alertMessage + ("- Debes elegir una cantidad de dinero.\n");
+            alertMessage = alertMessage + t("alerts.reason_null_amount");
         }
         if (data.email === "") {
-            alertMessage = alertMessage + ("- Debes seleccionar un destinatario.\n");
+            alertMessage = alertMessage + t("alerts.reason_null_receiver");
         }
         if (data.amount > users.find(elem => elem.email === mailLogedUser).money) {
-            alertMessage = alertMessage + ("- No dispones de tanto dinero. Tu saldo es: ".concat(avaibleMoney, " $.\n"));
+            alertMessage = alertMessage + t("alerts.reason_insuficent_funds", availableMoney);
         }
         if (data.email === localStorage.getItem("email")) {
-            alertMessage = alertMessage + ("- No puedes realizar transacciones a tu propia cuenta.\n");
+            alertMessage = alertMessage + t("alerts.reason_same_receiver");
         }
         if (alertMessage !== "Error:\n") {
             alert(alertMessage);
@@ -49,16 +50,18 @@ const Transfer = () => {
     return (
         <div className="container my-3">
             <div className="col-12 col-md-5">
-                <h2 className="primary-color">Realizar nueva transferencia</h2>
+                <h2 className="primary-color fw-bold">{t("transfer.new_transfer")}</h2>
                 <div>
                     <form onSubmit={handleSubmit(onSubmit)}>
-                        <label htmlFor="amount" className="form-label mt-3">Cantidad:</label>
-                        <div className="input-group mb-3">
-                            <span className="input-group-text">$</span>
-                            <input {...register("amount")} type="number" name="amount" className="form-control" id="amount" min="1" />
+                        <div className="my-4">
+                            <label htmlFor="amount" className="form-label">{t("common.amount")}</label>
+                            <div className="input-group">
+                                <span className="input-group-text">$</span>
+                                <input {...register("amount")} type="number" name="amount" className="form-control" id="amount" min="1" />
+                            </div>
                         </div>
-                        <div>
-                            <label htmlFor="email" className="form-label mt-3">Email del destinatario</label>
+                        <div className="my-4">
+                            <label htmlFor="email" className="form-label">{t("transfer.receiver")}</label>
                             <select {...register("email")} name="email" className="form-control" id="email" >
                                 <option value="" placeholder=""></option>
                                 {users.map((elem) => {
@@ -68,11 +71,9 @@ const Transfer = () => {
                                 })}
                             </select>
                         </div>
-                        <div className="text-center">
-                            <input type="submit" value="Enviar dinero" className="button-green m-4" />
+                        <div className="text-center py-3">
+                            <input type="submit" value={t("common.submit")} className="button-green" />
                         </div>
-
-
                     </form>
                 </div>
             </div>

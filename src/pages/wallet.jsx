@@ -2,8 +2,10 @@ import React from "react";
 import { useSelector } from "react-redux";
 import CardDeposit from "../components/card-deposit";
 import CardTransference from "../components/card-transference";
+import { useTranslation } from 'react-i18next';
 
-const Wallet = () => {
+    const Wallet = () => {
+    const { t } = useTranslation();
     const userEmail = localStorage.getItem("email")
     const userData = useSelector(state => state.users.find(elem => elem.email === userEmail));
     const transactions = userData.transactions.slice().reverse();
@@ -14,8 +16,8 @@ const Wallet = () => {
 
     return (
         <div className="container my-3">
-            <h2 className="primary-color">
-                {"Bienvenido ".concat(localStorage.getItem("name"))}
+            <h2 className="primary-color fw-bold">
+                {`${t("wallet.welcome_message")} ${localStorage.getItem("name")}`}
             </h2>
             <p className="h5 my-3">
                 Tu saldo actual es de:
