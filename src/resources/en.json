@@ -19,7 +19,7 @@
     "error_already_registered": "Error: Email address already exists",
     "reason_null_amount": "- You must select an amount of money.\n",
     "reason_null_receiver": "- You must select a receiver.\n",
-    "reason_insuficent_funds": "- You don't have that much money. Your current balance is: {{ availableMoney }} $.\n",
+    "reason_insuficent_funds": "- You don't have that much money. Your current balance is: {{availableMoney}} $.\n",
     "reason_same_receiver": "- You cannot make transactions to your own account.\n"
   },
   "navbar": {
@@ -35,7 +35,7 @@
     "go_to_wallet": "Go to wallet"
   },
   "login": {
-    "no_account": "Don't have an account?"
+    "no_account": "Don't you have an account?"
   },
   "register": {
     "already_got_account": "Do you already have account?"
@@ -43,8 +43,8 @@
   "wallet": {
     "welcome_message": "Welcome",
     "actual_balance": "Your current balance is: ",
-    "last_movements": "Last movements",
-    "empty_historial": "No movements available yet :("
+    "last_movements": "Transaction history",
+    "empty_historial": "No transactions available yet :("
   },
   "add_funds": {
     "add_funds": "Add funds to the account",
@@ -57,5 +57,13 @@
   "transfer": {
     "new_transfer": "Make new transfer",
     "receiver": "Receiver"
+  },
+  "card_transaction": {
+    "deposit": "Deposit",
+    "transference": "Transference",
+    "beneficiary" : "Beneficiary",
+    "issuer": "Issuer",
+    "receiver": "Receiver",
+    "balance": "Balance"
   }
 }

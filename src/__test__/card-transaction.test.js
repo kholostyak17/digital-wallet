@@ -1,11 +1,12 @@
 import React from "react";
 import "@testing-library/jest-dom/extend-expect";
 import { render } from "@testing-library/react";
-import CardTransference from "../components/card-transference";
+import CardTransaction from "../components/card-transaction";
 
 
 const renderComponent=()=>{
-    return render(<CardTransference
+    return render(<CardTransaction
+    variant="transference"
     date="29-02-2010 12:34"
     senderName="Remitente"
     senderEmail="mail del remitente"

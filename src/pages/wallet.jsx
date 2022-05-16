@@ -1,11 +1,9 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import CardDeposit from "../components/card-deposit";
-import CardTransference from "../components/card-transference";
-import { useTranslation } from 'react-i18next';
+import CardTransaction from "../components/card-transaction";
+import { t } from "i18next";
 
     const Wallet = () => {
-    const { t } = useTranslation();
     const userEmail = localStorage.getItem("email")
     const userData = useSelector(state => state.users.find(elem => elem.email === userEmail));
     const transactions = userData.transactions.slice().reverse();
@@ -19,19 +17,20 @@ import { useTranslation } from 'react-i18next';
             <h2 className="primary-color fw-bold">
                 {`${t("wallet.welcome_message")} ${localStorage.getItem("name")}`}
             </h2>
-            <p className="h5 my-3">
-                Tu saldo actual es de:
-                <span className="primary-color h3"> {userData.money.toString().concat(" $")}</span>
+            <p className="h5 my-4">
+                {t("wallet.actual_balance")}
+                <span className="primary-color h2 fw-bold"> {userData.money.toString().concat(" $")}</span>
             </p>
             <div>
-                <h3 className="mt-5 primary-color">Últimos movimientos</h3>  
+                <h3 className="mt-5 primary-color">{t("wallet.last_movements")}</h3>  
                 {(transactions.length === 0)
-                    ? <div>Todavía no hay movimientos :(</div>
+                    ? <div>{t("wallet.empty_historial")}</div>
                     : <div id="transactions-list" className="div-last-transactions">
                         {(transactions.map((elem, index) => {
                             if (elem.type === "deposit") {
-                                return <CardDeposit
+                                return <CardTransaction
                                     key={index}
+                                    variant="deposit"
                                     date={elem.date}
                                     beneficiaryName={elem.beneficiaryName}
                                     beneficiaryEmail={elem.beneficiaryEmail}
@@ -40,8 +39,9 @@ import { useTranslation } from 'react-i18next';
                                 />
                             }
                             if (elem.type === "transference") {
-                                return <CardTransference
+                                return <CardTransaction
                                     key={index}
+                                    variant="transference"
                                     date={elem.date}
                                     senderName={elem.senderName}
                                     senderEmail={elem.senderEmail}

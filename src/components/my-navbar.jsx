@@ -15,7 +15,7 @@ const MyNavbar = () => {
     }, [location]);
 
     return (
-        <Navbar collapseOnSelect expand="lg" variant="dark" className="my-navbar px-3">
+        <Navbar collapseOnSelect expand="md" variant="dark" className="my-navbar px-3">
             <Link className="primary-color text-decoration-none" to="/">
                 <span className="navbar-brand">
                     <img src={logo} className="App-logo-mini" alt="logo" />

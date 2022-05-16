@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { browserRouterRef } from "../router";
 import logo from "../assets/logo.svg"
+import { useLocation } from 'react-router-dom';
 import { t } from "i18next";
 
-const Home = () => {
+const Home = () => {const location = useLocation();
+    const [isUserSignedIn, setIsUserSignedIn] = useState(false)
+    useEffect(() => {
+        localStorage.getItem("signedIn") ? setIsUserSignedIn(true) : setIsUserSignedIn(false);
+    }, [location]);
 
     return (
         <div className="container my-3 text-center">
@@ -11,7 +16,7 @@ const Home = () => {
             <div className="text-center p-5">
                 <img src={logo} className="App-logo" alt="logo" />
             </div>
-            {!localStorage.getItem("signedIn")
+            {!isUserSignedIn
                 ?
                 (<div>
                     <button className="button-green m-3" onClick={() => browserRouterRef.current.history.replace("/register")}>

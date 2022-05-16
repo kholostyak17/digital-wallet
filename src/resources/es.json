@@ -19,7 +19,7 @@
     "error_already_registered": "Error: Dirección de correo electrónico ya existente",
     "reason_null_amount": "- Debes elegir una cantidad de dinero.\n",
     "reason_null_receiver": "- Debes seleccionar un destinatario.\n",
-    "reason_insuficent_funds": "- No dispones de tanto dinero. Tu saldo es: {{ availableMoney }} $.\n",
+    "reason_insuficent_funds": "- No dispones de tanto dinero. Tu saldo es: {{availableMoney}} $.\n",
     "reason_same_receiver": "- No puedes realizar transacciones a tu propia cuenta.\n"
   },
   "navbar": {
@@ -29,22 +29,22 @@
     "sign_off": "Cerrar sesión"
   },
   "footer": {
-    "created_by": "Simple app created by"
+    "created_by": "Aplicacion sencilla creada por"
   },
   "home": {
     "go_to_wallet": "Ir a mi cartera"
   },
   "login": {
-    "no_account": "Don't have an account?"
+    "no_account": "¿No tienes una cuenta?"
   },
   "register": {
-    "already_got_account": "Do you already have account?"
+    "already_got_account": "¿Ya tienes una cuenta?"
   },
   "wallet": {
     "welcome_message": "Bienvenido/a",
-    "actual_balance": "Your current balance is: ",
-    "last_movements": "Last movements",
-    "empty_historial": "No movements available yet :("
+    "actual_balance": "Tu saldo disponible es de: ",
+    "last_movements": "Historial de movimientos",
+    "empty_historial": "No hay movimentos disponibles todavía :("
   },
   "add_funds": {
     "add_funds": "Añadir fondos",
@@ -55,7 +55,15 @@
     "pay": "Pagar"
   },
   "transfer": {
-    "new_transfer": "Make new transfer",
+    "new_transfer": "Hacer nueva transferencia",
     "receiver": "Destinatario/a"
+  },
+  "card_transaction": {
+    "deposit": "Depósito",
+    "transference": "Transferencia",
+    "beneficiary" : "Beneficiario/a",
+    "issuer": "Emisor/a",
+    "receiver": "Receptor/a",
+    "balance": "Saldo"
   }
 }

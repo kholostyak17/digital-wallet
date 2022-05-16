@@ -22,7 +22,7 @@ const Transfer = () => {
             alertMessage = alertMessage + t("alerts.reason_null_receiver");
         }
         if (data.amount > users.find(elem => elem.email === mailLogedUser).money) {
-            alertMessage = alertMessage + t("alerts.reason_insuficent_funds", availableMoney);
+            alertMessage = alertMessage + t("alerts.reason_insuficent_funds", {availableMoney});
         }
         if (data.email === localStorage.getItem("email")) {
             alertMessage = alertMessage + t("alerts.reason_same_receiver");
