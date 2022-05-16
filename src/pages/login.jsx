@@ -37,7 +37,12 @@ const Login = () => {
                 </div>
                 <input type="submit" value={t("common.continue")} className="button-green mb-4" />
             </form>
-            <p className="my-3">{t("login.no_account")} <Link className="text-decoration-none primary-color" to="register">{t("common.sign_up")}</Link></p>
+            <p className="my-3 text-switch-sign-up-sign-in">
+                {t("login.no_account")}{" "}
+                <Link className="text-decoration-none primary-color" to="register">
+                    {t("common.sign_up")}
+                </Link>
+            </p>
         </div>
     );
 };

@@ -17,9 +17,12 @@ const MyNavbar = () => {
     return (
         <Navbar collapseOnSelect expand="md" variant="dark" className="my-navbar px-3">
             <Link className="primary-color text-decoration-none" to="/">
-                <span className="navbar-brand">
+                <span className="navbar-brand d-flex flex-row align-items-center">
                     <img src={logo} className="App-logo-mini" alt="logo" />
-                    <span className="primary-color">Digital Wallet</span>
+                    <div className="logo-navbar-text primary-color d-flex flex-column">
+                        <span>DIGITAL</span>
+                        <span>WALLET</span>
+                    </div>
                 </span>
             </Link>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />

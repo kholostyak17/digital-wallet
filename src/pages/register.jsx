@@ -45,7 +45,12 @@ const Register = () => {
                         <input {...register("password")} type="password" name="password" className="form-control" id="password" minLength={4} autocomplete="new-password"/>
                         <div className="text-center">
                             <input type="submit" value={t("common.continue")} className="button-green m-5" />
-                            <p>{t("register.already_got_account")} <Link className="text-decoration-none primary-color" to="login">{t("common.sign_in")}</Link></p>
+                            <p className="my-2 text-switch-sign-up-sign-in">
+                                {t("register.already_got_account")}{" "}
+                                <Link className="text-decoration-none primary-color" to="login">
+                                    {t("common.sign_in")}
+                                </Link>
+                            </p>
                         </div>
                     </div>
                 </form>
